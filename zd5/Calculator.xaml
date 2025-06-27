@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zd5.Calculator">
+    <ContentPage x:Name ="UserNameT" Title="Кредитный калькулятор" Background="white">
+        <AbsoluteLayout x:Name="stackSummCredit">
+            <Label Text="Сумма кредита:" TextColor="Black" FontSize="16" AbsoluteLayout.LayoutBounds="10, 50"></Label>
+            <Frame BorderColor="Black" HasShadow="False" Padding="0" AbsoluteLayout.LayoutBounds="150, 25, 200, 70">
+                <Entry x:Name="SumEntry" TextColor="Black" TextChanged="OnTextChangedSum" ></Entry>
+            </Frame>
+
+            <Label Text="Срок (Месяцев):" TextColor="Black" FontSize="16" AbsoluteLayout.LayoutBounds="10, 150"></Label>
+            <Frame BorderColor="Black" HasShadow="False" Padding="0" AbsoluteLayout.LayoutBounds="150, 125, 200, 70">
+                <Entry x:Name="SrockEntry" TextColor="Black" TextChanged="OnTextChangedSrock" ></Entry>
+            </Frame>
+
+            <Label Text="Вид платежа:" TextColor="Black" FontSize="16" AbsoluteLayout.LayoutBounds="10, 250"></Label>
+            <Frame BorderColor="Black" HasShadow="False" Padding="0" AbsoluteLayout.LayoutBounds="150, 225, 200, 70">
+                <Picker x:Name="picker" TextColor="Black" SelectedIndexChanged="OnPickerSelectedIndexChanged">
+                    <Picker.Items>
+                        <x:String>Аннуитетный</x:String>
+                    </Picker.Items>
+                </Picker>
+            </Frame>
+
+            <Label Text="Процентная ставка:" TextColor="Black" FontSize="16" AbsoluteLayout.LayoutBounds="10, 350"></Label>
+            <Slider x:Name="slider" AbsoluteLayout.LayoutBounds="150, 325, 200, 70" ThumbColor="LightBlue" MaximumTrackColor="LightBlue" MinimumTrackColor="LightBlue" Minimum="0" Maximum="100" Value="0" ValueChanged="OnSliderValueChanged">
+            </Slider>
+            <Label x:Name = "procent" Text="..." TextColor="Black" FontSize="16" AbsoluteLayout.LayoutBounds="170, 390"></Label>
+            <Label Text="Ежемесячный платеж:" TextColor="Black" FontSize="16" AbsoluteLayout.LayoutBounds="10, 430"></Label>
+            <Label x:Name = "EzPlat" Text="0" TextColor="Black" FontSize="16" AbsoluteLayout.LayoutBounds="180, 430"></Label>
+            <Label Text="Общая сумма:" TextColor="Black" FontSize="16" AbsoluteLayout.LayoutBounds="10, 530"></Label>
+            <Label x:Name ="ObsPlat" Text="0" TextColor="Black" FontSize="16" AbsoluteLayout.LayoutBounds="180, 530"></Label>
+            <Label Text="Переплата:" TextColor="Black" FontSize="16" AbsoluteLayout.LayoutBounds="10, 630"></Label>
+            <Label x:Name ="Pereplata" Text="0" TextColor="Black" FontSize="16" AbsoluteLayout.LayoutBounds="180, 630"></Label>
+        </AbsoluteLayout>
+    </ContentPage>
+    <ContentPage Title="Курсы валют" Background="white" >
+        <AbsoluteLayout  x:Name="kursValut">
+            <Label Text="Центробанк РФ:" TextColor="Black" FontSize="16" AbsoluteLayout.LayoutBounds="10, 50"></Label>
+            <Label Text="Текущая дата:" TextColor="Black" FontSize="16" FontAttributes="Bold" TextDecorations="Underline" AbsoluteLayout.LayoutBounds="200, 50"></Label>
+            <Label Text="USD:" TextColor="Black" FontSize="16" FontAttributes="Bold" TextDecorations="Underline" AbsoluteLayout.LayoutBounds="10, 100"></Label>
+            <Label x:Name="usd" Text="..." TextColor="Black" FontSize="16" AbsoluteLayout.LayoutBounds="60, 100"></Label>
+            <Label Text="EUR:" TextColor="Black" FontSize="16" FontAttributes="Bold" TextDecorations="Underline" AbsoluteLayout.LayoutBounds="10, 150"></Label>
+            <Label x:Name ="eur" Text = "..." TextColor="Black" FontSize="16" AbsoluteLayout.LayoutBounds="60, 150"></Label>
+            <DatePicker x:Name = "cutdate" TextColor="Black" FontSize="16" AbsoluteLayout.LayoutBounds="200, 100"></DatePicker>
+        </AbsoluteLayout>
+    </ContentPage>
+</TabbedPage>
